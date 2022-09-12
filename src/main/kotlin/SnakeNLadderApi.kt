@@ -1,7 +1,7 @@
 class SnakeNLadderApi {
-    fun test(a: Int, b: Int) {
+    fun test(position: Int, diceValue: Int) {
         SnakeNLadder()
         val gameConsole = SnakeNLadderServiceImpl()
-        println(gameConsole.startGame(a, b))
+        println(gameConsole.startGame(position, diceValue))
     }
 }
