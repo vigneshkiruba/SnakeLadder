@@ -8,7 +8,6 @@ class SnakeNLadderTest() : BehaviorSpec() {
         SnakeNLadder()
     }
 
-
     init {
         given("Reached final position") {
             val gameConsole = SnakeNLadderServiceImpl()
