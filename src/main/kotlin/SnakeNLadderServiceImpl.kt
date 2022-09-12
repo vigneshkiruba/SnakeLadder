@@ -6,10 +6,6 @@ class SnakeNLadderServiceImpl : SnakeNLadderService {
     override fun calculatePlayerPosition(initialPosition: Int, diceValue: Int): Int {
         var changedPosition = initialPosition
         changedPosition += diceValue
-        if (changedPosition > WINPOINT) {
-            changedPosition -= diceValue
-            return changedPosition
-        }
         if (null != snake[changedPosition]) {
             println("swallowed by snake")
             changedPosition = snake[changedPosition]!!
@@ -30,6 +26,8 @@ class SnakeNLadderServiceImpl : SnakeNLadderService {
         val finalPosition: Int = calculatePlayerPosition(initialPosition, diceValue)
         output = if (isWin(finalPosition)) {
             "Yay!! You won!!"
+        } else if (finalPosition > 100) {
+            "Position exceeds the board"
         } else {
             "Position $finalPosition"
         }

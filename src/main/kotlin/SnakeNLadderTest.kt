@@ -29,5 +29,10 @@ class SnakeNLadderTest() : BehaviorSpec() {
             val gameConsole = SnakeNLadderServiceImpl()
             gameConsole.startGame(5, 2).shouldBe("Position 7")
         }
+
+        given("Exceeds board") {
+            val gameConsole = SnakeNLadderServiceImpl()
+            gameConsole.startGame(97, 5).shouldBe("Position exceeds the board")
+        }
     }
 }
