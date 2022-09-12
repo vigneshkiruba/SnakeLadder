@@ -25,13 +25,14 @@ class SnakeNLadderServiceImpl : SnakeNLadderService {
         return WINPOINT == player
     }
 
-    override fun startGame(initialPosition: Int, diceValue: Int) {
+    override fun startGame(initialPosition: Int, diceValue: Int) : String {
+        val output : String
         val finalPosition: Int = calculatePlayerPosition(initialPosition, diceValue)
-        if (isWin(finalPosition)) {
-            println("Yay!! You won!!")
-            return
+        output = if (isWin(finalPosition)) {
+            "Yay!! You won!!"
         } else {
-            println("Position $finalPosition")
+            "Position $finalPosition"
         }
+        return output
     }
 }
